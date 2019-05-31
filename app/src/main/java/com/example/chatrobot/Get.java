@@ -11,11 +11,11 @@ import java.net.URL;
 
 class Get {
 
-    public interface Callback{
+    public interface Callback {
         void onResponse(String response);
     }
 
-    static void get(final URL url, final Callback callback){
+    static void get(final URL url, final Callback callback) {
         final Handler handler = new Handler();
         new Thread(new Runnable() {
             @Override
@@ -31,7 +31,7 @@ class Get {
                     reader = new BufferedReader(new InputStreamReader(in));
                     final StringBuilder response = new StringBuilder();
                     String line;
-                    while((line = reader.readLine())!=null){
+                    while ((line = reader.readLine()) != null) {
                         response.append(line);
                     }
                     handler.post(new Runnable() {
@@ -43,14 +43,14 @@ class Get {
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
-                    if (reader != null){
+                    if (reader != null) {
                         try {
                             reader.close();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
-                    if (connection != null){
+                    if (connection != null) {
                         connection.disconnect();
                     }
                 }

@@ -38,17 +38,16 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //初始数据
-    private void init(){
-        Msg msg = new Msg("123",Msg.TYPE_RECEIVED);
+    private void init() {
+        Msg msg = new Msg("123", Msg.TYPE_RECEIVED);
         msgList.add(msg);
-
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btn_send){
+        if (v.getId() == R.id.btn_send) {
             String content = mEtInput.getText().toString();
-            Msg sendMsg = new Msg(content,Msg.TYPE_SENT);
+            Msg sendMsg = new Msg(content, Msg.TYPE_SENT);
             msgList.add(sendMsg);
             mEtInput.setText("");
             msgAdapter.notifyItemInserted(msgList.size() - 1);
@@ -73,12 +72,12 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private String receiveMsg(String json){
+    private String receiveMsg(String json) {
         String receiveMsg = "";
         try {
             JSONObject jsonObject = new JSONObject(json);
             receiveMsg = jsonObject.getString("text");
-            if (jsonObject.getString("url")!=null){
+            if (jsonObject.getString("url") != null) {
                 receiveMsg = receiveMsg + '\n' + jsonObject.getString("url");
             }
         } catch (JSONException e) {

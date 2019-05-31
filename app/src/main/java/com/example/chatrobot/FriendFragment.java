@@ -29,7 +29,7 @@ public class FriendFragment extends Fragment {
         mTvRobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),ChatActivity.class);
+                Intent intent = new Intent(view.getContext(), ChatActivity.class);
                 startActivity(intent);
             }
         });

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.item_message:
                         mTvTitle.setText(getString(R.string.message));
                         replaceFragment(new FriendFragment());
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //碎片切换
-    private void replaceFragment (Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.ll_main, fragment);

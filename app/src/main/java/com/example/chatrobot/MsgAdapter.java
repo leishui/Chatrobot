@@ -41,11 +41,11 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Msg msg = msgList.get(i);
-        if (msg.getType() == Msg.TYPE_RECEIVED){
+        if (msg.getType() == Msg.TYPE_RECEIVED) {
             viewHolder.mLlRight.setVisibility(View.GONE);
             viewHolder.mLlLeft.setVisibility(View.VISIBLE);
             viewHolder.mTvLeft.setText(msg.getContent());
-        }else if (msg.getType() == Msg.TYPE_SENT){
+        } else if (msg.getType() == Msg.TYPE_SENT) {
             viewHolder.mLlLeft.setVisibility(View.GONE);
             viewHolder.mLlRight.setVisibility(View.VISIBLE);
             viewHolder.mTvRight.setText(msg.getContent());
